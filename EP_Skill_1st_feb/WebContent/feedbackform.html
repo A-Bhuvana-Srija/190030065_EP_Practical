@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>FEEDBACK</title>
+<style>
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.bg {
+	animation: slide 3s ease-in-out infinite alternate;
+	background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+	bottom: 0;
+	left: -50%;
+	opacity: .5;
+	position: fixed;
+	right: -50%;
+	top: 0;
+	z-index: -1;
+}
+
+.bg2 {
+	animation-direction: alternate-reverse;
+	animation-duration: 4s;
+}
+
+.bg3 {
+	animation-duration: 5s;
+}
+
+.content {
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: .25em;
+	box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+	box-sizing: border-box;
+	left: 50%;
+	padding: 10vmin;
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+h1 {
+	font-family: monospace;
+}
+
+@
+keyframes slide { 0% {
+	transform: translateX(-25%);
+}
+
+100
+
+
+%
+{
+transform
+
+
+:
+
+
+translateX
+(
+
+
+25
+%
+
+
+)
+;
+
+
+}
+}
+.button {
+	border-radius: 4px;
+	background-color: blue;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+h2 {
+	font-size: 50px;
+	color: blue;
+}
+
+p {
+	font-size: 24px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+box1 {
+	background-color: linear-gradient(yellow, white);
+}
+</style>
+<script>
+	function feedbackvalidations() {
+		var a = 0, rdbtn1 = document.getElementsByName("q1");
+		var b = 0, rdbtn2 = document.getElementsByName("q2");
+		var c = 0, rdbtn3 = document.getElementsByName("q3");
+		var d = 0, rdbtn4 = document.getElementsByName("q4");
+		var e = 0, rdbtn5 = document.getElementsByName("q5");
+
+		for (i = 0; i < rdbtn1.length; i++) {
+
+			if (rdbtn1.item(i).checked == false) {
+				a++;
+			}
+		}
+		if (a == rdbtn1.length) {
+			alert("Please Answer Question 1!");
+			return false;
+		}
+
+		for (j = 0; j < rdbtn2.length; j++) {
+
+			if (rdbtn2.item(j).checked == false) {
+				b++;
+			}
+		}
+		if (b == rdbtn2.length) {
+			alert("Please Answer Question 2!");
+			return false;
+		}
+		for (k = 0; k < rdbtn3.length; k++) {
+
+			if (rdbtn3.item(k).checked == false) {
+				c++;
+			}
+		}
+		if (c == rdbtn3.length) {
+			alert("Please Answer Question 3!");
+			return false;
+		}
+		for (l = 0; l < rdbtn4.length; l++) {
+
+			if (rdbtn4.item(l).checked == false) {
+				d++;
+			}
+		}
+		if (d == rdbtn4.length) {
+			alert("Please Answer Question 4!");
+			return false;
+		}
+
+		for (m = 0; m < rdbtn5.length; m++) {
+
+			if (rdbtn5.item(m).checked == false) {
+				e++;
+			}
+		}
+		if (e == rdbtn5.length) {
+			alert("Please Answer Question 5!");
+			return false;
+		}
+
+	}
+</script>
+</head>
+<body>
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
+	<h2 align="center" style='color: Yellow'>Feedback Page</h2>
+	<div class="box1"></div>
+		<form name=feedbackform method="post"
+			onsubmit="return feedbackvalidations()" action="FeedbackServlet">
+			<br>
+			<table align="center" class="bordered">
+				<tr>
+					<td>Give a rating for the Language Skills of your faculty : <br>
+						<br> <input type="radio" name="q1" value="Excellent">Excellent
+						&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q1"
+						value="Good">Good &nbsp;&nbsp;&nbsp;&nbsp; <input
+						type="radio" name="q1" value="Average">Average <br>
+					</td>
+				</tr>
+				<tr>
+					<td>Give a rating for the Technical Skills of your faculty : <br>
+						<br> <input type="radio" name="q2" value="Excellent">Excellent
+						&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q2"
+						value="Good">Good &nbsp;&nbsp;&nbsp;&nbsp; <input
+						type="radio" name="q2" value="Average">Average <br>
+					</td>
+				</tr>
+				<tr>
+					<td>Give a rating for the Mentoring Skills of your faculty : <br>
+						<br> <input type="radio" name="q3" value="Excellent">Excellent
+						&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q3"
+						value="Good">Good &nbsp;&nbsp;&nbsp;&nbsp; <input
+						type="radio" name="q3" value="Average">Average <br>
+					</td>
+					</td>
+				</tr>
+				<tr>
+					<td>Give a rating for the Punctuality of your faculty : <br>
+						<br> <input type="radio" name="q4" value="Excellent">Excellent
+						&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q4"
+						value="Good">Good &nbsp;&nbsp;&nbsp;&nbsp; <input
+						type="radio" name="q4" value="Average">Average <br>
+					</td>
+					</td>
+				</tr>
+				<tr>
+					<td>Overall Rating to your faculty : <br> <br> <input
+						type="radio" name="q5" value="Excellent">Excellent
+						&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="q5"
+						value="Good">Good &nbsp;&nbsp;&nbsp;&nbsp; <input
+						type="radio" name="q5" value="Average">Average <br>
+					</td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<label>Remarks : <br> <textarea name="remarks"
+									rows="4" cols="36"></textarea>
+							</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="submit"
+						style='position: relative; left: 280px;' value="SUBMIT FEEDBACK"></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

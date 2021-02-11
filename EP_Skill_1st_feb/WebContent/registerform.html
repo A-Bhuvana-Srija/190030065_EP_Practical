@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<style>
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+.button {
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+h2 {
+  font-size: 50px;
+  color : blue;
+}
+
+p{
+  font-size : 24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+box1{
+ background-color : linear-gradient(yellow,white);
+}
+</style>
+<script>
+        function validate() {
+            var name = document.myform.name.value;
+            var id = document.myform.id.value;
+            var email = document.myform.email.value;
+            var password = document.myform.password.value;
+
+            if (name == "" || id == "" || email == "" ) {
+                alert('All the fields must be filled!');
+                return false;
+            }    
+            if (name.length < 8) {
+                alert("Name must be minimum 8 characters long!");
+                return false;
+            }
+            if (id.length < 8) {
+                alert("ID no must be minimum 8 digits long!");
+                return false;
+            }
+            if (email.length < 8) {
+                alert("Email must be minimum 8 characters long!");
+                return false;
+            }
+            
+            if (password.length < 6) {
+                alert("Password must be minimum 6 characters long!");
+                return false;
+            }
+            
+            if (symbol == -1 && dot == -1) {
+                alert("Enter a Valid EmailID!");
+                return false;
+            }
+            else if ((parseInt(dot) - parseInt(symbol)) == 1) {
+                alert("Enter a Valid EmailID!");
+                return false;
+            }
+            else if ((parseInt(len) - parseInt(dot) - 1) < 2) {
+                alert("Enter a Valid EmailID!");
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
+	<h2 align = "center"  style = 'color:Yellow'> Registration  Page </h2>
+	<div class = "box1"></div>
+	<form action="RegisterServlet" name="myform" method="post" onsubmit="return validate()">
+		<table align="center">
+			<br>
+			<br>
+			<tr>
+				<td>Name of the Student :</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<br>
+			<tr>
+				<td>ID :</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<br>
+			<tr>
+				<td>Email Id :</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<br>
+			<tr>
+				<td>Password :</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<br>
+			<tr>
+			<td></td>
+			<td><a href = "loginform.html"><input type="submit" value="REGISTER"></a></td>
+			</tr>
+		</table>
+	</form>
+	<center>
+	<a href = "loginform.html">ALREADY REGISTERED? LOGIN HERE</a>
+	</center>
+</body>
+</html>
