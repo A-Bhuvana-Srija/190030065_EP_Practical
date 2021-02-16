@@ -1,0 +1,47 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>insert</servlet-name>
+  	<display-name>insert</display-name>
+  	<description></description>
+  	<servlet-class>insert</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>update</servlet-name>
+  	<display-name>update</display-name>
+  	<description></description>
+  	<servlet-class>update</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>delete</servlet-name>
+  	<display-name>delete</display-name>
+  	<description></description>
+  	<servlet-class>delete</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>view</servlet-name>
+  	<display-name>view</display-name>
+  	<description></description>
+  	<servlet-class>view</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>insert</servlet-name>
+  	<url-pattern>/insert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>update</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>delete</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>view</servlet-name>
+  	<url-pattern>/view</url-pattern>
+  </servlet-mapping>
+</web-app>

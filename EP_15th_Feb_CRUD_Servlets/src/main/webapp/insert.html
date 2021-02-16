@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insertion Page</title>
+<style>
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.bg {
+	animation: slide 3s ease-in-out infinite alternate;
+	background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+	bottom: 0;
+	left: -50%;
+	opacity: .5;
+	position: fixed;
+	right: -50%;
+	top: 0;
+	z-index: -1;
+}
+
+.bg2 {
+	animation-direction: alternate-reverse;
+	animation-duration: 4s;
+}
+
+.bg3 {
+	animation-duration: 5s;
+}
+
+.content {
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: .25em;
+	box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+	box-sizing: border-box;
+	left: 50%;
+	padding: 10vmin;
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+h1 {
+	font-family: monospace;
+}
+
+@keyframes slide 
+{ 
+0% 
+{
+	transform: translateX(-25%);
+}
+100%
+{
+transform:translateX(25%);
+}
+}
+.button 
+{
+	border-radius: 4px;
+	background-color: blue;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 28px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+h2 {
+	font-size: 50px;
+	color: blue;
+}
+
+p {
+	font-size: 24px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+box1 {
+	background-color: linear-gradient(yellow, white);
+}
+</style>
+<script>
+	function validate() {
+		var name = document.form.name.value;
+		var id = document.form.regno.value;
+		var email = document.form.email.value;
+		var symbol = email.indexOf('@');
+		var dot = email.lastIndexOf('.');
+		var len = email.length;
+		if (name == "") {
+			alert('Name must be filled');
+			return false;
+		}
+		if (id == "") {
+			alert("Id must be filled");
+			return false;
+		}
+		if (email == "") {
+			alert("Email must be filled");
+			return false;
+		}
+		if (name.length < 8) {
+			alert("Name must be min 8 characters");
+			return false;
+		}
+		if (id.length < 3) {
+			alert("ID no must be min 3 digits");
+			return false;
+		}
+		if (email.length < 8) {
+			alert("Email must be min 8 characters");
+			return false;
+		}
+
+		if (symbol == -1 && dot == -1) {
+			alert("Enter Valid EmailID");
+			return false;
+		} else if ((parseInt(dot) - parseInt(symbol)) == 1) {
+			alert("Enter Valid EmailID");
+			return false;
+		} else if ((parseInt(len) - parseInt(dot) - 1) < 2) {
+			alert("Enter Valid EmailID");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="bg"></div>
+	<div class="bg bg2"></div>
+	<div class="bg bg3"></div>
+	<br>
+	<br>
+	<h2 align="center" style='color: Blue'>Insertion Page</h2>
+	<div class="box1">
+		<form name="form" method="post" onsubmit="return validate()"
+			action="insert">
+			<br>
+			<table align="center" class="bordered">
+				<tr>
+					<td>Enter The Name Of The Student : &nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;<input type="text" name="name"><br></td>
+				</tr>
+				<br>
+				<tr>
+					<td>Enter The Regd. Num Of The Student : &nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;<input type="text" name="regno"><br></td>
+				</tr>
+				<br>
+				<tr>
+					<td>Enter The Email Of The Student : &nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;<input type="text" name="email"><br>
+					<br></td>
+				</tr>
+				<br>
+				<tr>
+					<td><input type="submit"
+						style='position: relative; left: 300px;' value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>
